@@ -3,115 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sri Vatsa G | Data Engineer & ML Enthusiast</title>
-  <meta name="description" content="Portfolio of Sri Vatsa G – Data Engineering, Cloud, and Machine Learning projects." />
+  <title>Sri Vatsa G | Portfolio</title>
+  <meta name="description" content="Portfolio of Sri Vatsa G – Data Engineering, Cloud, and Machine Learning." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #0f172a; color: #e5e7eb; }
-    a { color: #38bdf8; text-decoration: none; }
-    header { padding: 3rem 2rem; background: linear-gradient(135deg, #020617, #0f172a); }
-    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    header p { max-width: 700px; color: #cbd5f5; }
-    nav { margin-top: 1.5rem; }
-    nav a { margin-right: 1.5rem; font-weight: 600; }
-    section { padding: 3rem 2rem; max-width: 1100px; margin: auto; }
-    h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid #1e293b; padding-bottom: 0.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: #020617; padding: 1.5rem; border-radius: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-    .card h3 { margin-top: 0; }
-    ul { padding-left: 1.2rem; }
-    footer { text-align: center; padding: 2rem; color: #94a3b8; border-top: 1px solid #1e293b; }
-    .tag { display: inline-block; background: #1e293b; padding: 0.3rem 0.7rem; border-radius: 999px; font-size: 0.8rem; margin: 0.2rem; }
+    :root {
+      --bg: #0b1120;
+      --card: #020617;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #1e293b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    header {
+      padding: 4rem 2rem 3rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 1rem 2rem;
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+
+    nav a {
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    nav a.active {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.75rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: #111827;
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 0.25rem 0.25rem 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-<header>
+<header class="reveal">
   <h1>Sri Vatsa G</h1>
-  <p>Data Engineering & Machine Learning Enthusiast | Azure • PySpark • TensorFlow</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <p>Data Engineering & Machine Learning Enthusiast with hands-on experience in Azure-based ETL pipelines, big data processing, and deep learning projects.</p>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am an M.Tech Computer Science (Big Data Analytics) graduate from VIT Chennai with a strong foundation in
-    data engineering, cloud technologies, and machine learning. I enjoy building end-to-end data pipelines,
-    experimenting with scalable ML models, and solving real-world problems using data.
-  </p>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about" class="reveal">
+  <h2>About</h2>
+  <div class="card">
+    <p>
+      Enthusiastic and adaptable fresher with a strong academic background in Big Data Analytics and a solid foundation in cloud technologies, data engineering, and machine learning. Skilled in problem-solving and data-driven thinking, with a keen interest in building scalable pipelines and robust ML solutions.
+    </p>
+  </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="reveal">
   <h2>Technical Skills</h2>
   <div class="card">
     <p><strong>Programming:</strong> Python, Java</p>
-    <p><strong>Cloud & Data Engineering:</strong> Azure Data Factory, Azure SQL Database, ETL Pipelines</p>
+    <p><strong>Cloud & Data Engineering:</strong> Azure Data Factory, Azure SQL Database, ETL Pipeline Orchestration</p>
     <p><strong>Big Data:</strong> HDFS, PySpark</p>
     <p><strong>Tools & Visualization:</strong> Power BI, MySQL, Git</p>
-    <div>
-      <span class="tag">Azure</span>
-      <span class="tag">ETL</span>
-      <span class="tag">PySpark</span>
-      <span class="tag">TensorFlow</span>
-      <span class="tag">Power BI</span>
+    <div class="tags">
+      <span>Azure</span><span>ETL</span><span>PySpark</span><span>TensorFlow</span><span>Power BI</span>
     </div>
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" class="reveal">
   <h2>Projects</h2>
   <div class="grid">
     <div class="card">
       <h3>Multiple Crop-Invariant Disease Detection</h3>
-      <p><strong>Tech:</strong> Python, TensorFlow, SimCLR, DANN, OpenCV</p>
+      <p><em>Jan 2025 – Apr 2025</em></p>
       <ul>
-        <li>Addressed domain overfitting in plant disease detection.</li>
-        <li>Enabled cross-crop generalization across 9 crops and 33 diseases.</li>
+        <li>Solved domain overfitting in plant disease detection using SimCLR and DANN.</li>
+        <li>Achieved strong cross-crop generalization across 9 crops and 33 disease classes.</li>
         <li>Improved Crop Invariance Score from 0% to 3.04%.</li>
       </ul>
-      <a href="https://github.com/SriVatsa-G" target="_blank">View on GitHub →</a>
+      <p><strong>Tech:</strong> Python, TensorFlow, OpenCV</p>
     </div>
+
     <div class="card">
       <h3>Cashew Leaf Disease Detection</h3>
-      <p><strong>Tech:</strong> Python, TensorFlow, EfficientNetV2B0, OpenCV</p>
+      <p><em>Jun 2024 – Dec 2024</em></p>
       <ul>
-        <li>Early detection of cashew leaf diseases.</li>
-        <li>Achieved 97.41% accuracy.</li>
-        <li>Outperformed DenseNet121 and MobileNetV2.</li>
+        <li>Developed an accurate model for early cashew leaf disease detection.</li>
+        <li>Achieved 97.41% accuracy using EfficientNetV2B0.</li>
+        <li>Demonstrated strong generalization with minimal misclassification.</li>
       </ul>
-      <a href="https://github.com/SriVatsa-G" target="_blank">View on GitHub →</a>
+      <p><strong>Tech:</strong> Python, TensorFlow, Keras, OpenCV</p>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="reveal">
   <h2>Experience</h2>
   <div class="card">
-    <h3>Project Engineer – Wipro Technologies</h3>
+    <h3>Project Engineer – Wipro Technologies Ltd.</h3>
     <p><em>May 2019 – May 2020 | Kochi, Kerala</em></p>
     <ul>
-      <li>Performed system and security assessments.</li>
-      <li>Assisted in debugging, documentation, and issue analysis.</li>
-      <li>Collaborated with teams to improve internal processes.</li>
+      <li>Performed system and security assessments to support compliance and reliability.</li>
+      <li>Assisted in debugging, documentation, and recurring issue analysis.</li>
+      <li>Collaborated with engineering teams to improve internal processes.</li>
     </ul>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="reveal">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:gsrivatsa1398@gmail.com">gsrivatsa1398@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/g-sri-vatsa" target="_blank">linkedin.com/in/g-sri-vatsa</a></p>
-  <p>GitHub: <a href="https://github.com/SriVatsa-G" target="_blank">github.com/SriVatsa-G</a></p>
+  <div class="card">
+    <p>Email: <a href="mailto:gsrivatsa1398@gmail.com">gsrivatsa1398@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/g-sri-vatsa" target="_blank">linkedin.com/in/g-sri-vatsa</a></p>
+    <p>GitHub: <a href="https://github.com/SriVatsa-G" target="_blank">github.com/SriVatsa-G</a></p>
+  </div>
 </section>
 
 <footer>
-  © 2026 Sri Vatsa G • Built with HTML & CSS
+  © 2026 Sri Vatsa G
 </footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(r => observer.observe(r));
+
+  // Active nav link
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (pageYOffset >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
